@@ -1,0 +1,25 @@
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #eef2ff;              /* soft indigo background */
+}
+
+
+.page {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 0 16px 40px 16px;
+}
+
+
+h1 {
+  color: steelblue;
+  letter-spacing: 0.4px;
+}
+
+/* Make all h2 consistent */
+h2 {
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}

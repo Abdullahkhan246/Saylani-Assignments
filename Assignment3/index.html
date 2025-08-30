@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="favicon.ico" />
+  <title>Assignment 3 - Abdullah Durrani</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    
+    h1.title {
+      color: rebeccapurple;           /* Will be overridden by inline style on the h1 below */
+      background: #f3e8ff;
+      padding: 12px 16px;
+      border-radius: 12px;
+    }
+
+    /* Section container styling (internal) */
+    .section {
+      background: #f8fafc;            /* light background */
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      border-radius: 12px;
+      margin-block: 14px;
+    }
+
+    /* Paragraph styling (internal) */
+    .about {
+      line-height: 1.6;
+      color: #111827;
+    }
+
+    /* List styling (internal) */
+    .nice-list {
+      padding-left: 1.25rem;
+    }
+    .nice-list li {
+      margin: 6px 0;
+    }
+
+    /* Table styling (internal) */
+    table.profile {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    table.profile th, table.profile td {
+      border: 1px solid #d1d5db;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    table.profile thead th {
+      background: #1f2937;            /* dark header background */
+      color: white;
+    }
+    table.profile tbody tr:nth-child(odd) {
+      background: #f3f4f6;
+    }
+
+    /* Form styling (internal) */
+    form.contact {
+      display: grid;
+      gap: 10px;
+      max-width: 520px;
+    }
+    form.contact label {
+      font-weight: 600;
+    }
+    form.contact input, form.contact select, form.contact textarea {
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+    form.contact button {
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    form.contact button:hover {
+      filter: brightness(0.95);
+    }
+
+    /* A more specific selector to demonstrate specificity beating origin:
+       This targets #highlight p which is more specific than a plain .about rule. */
+    #highlight p.about {
+      color: #0f766e;  /* Teal-ish, overrides .about color inside this section */
+    }
+  </style>
+</head>
+<body>
+  <!-- Page wrapper with background from EXTERNAL CSS -->
+  <div class="page">
+
+    <!-- H1 with INLINE style (highest priority) -->
+    <!-- Requirements: exact text for h1 -->
+    <h1 class="title"
+        style="color: darkgreen; text-transform: capitalize;">
+      this is the assignment no 3 by abdullah durrani
+    </h1>
+
+    <!-- Paragraph (about me) -->
+    <section class="section" id="highlight">
+      <h2>About Me</h2>
+      <p class="about">
+        I’m Abdullah Durrani, a BSCS student from Pakistan with a growing
+        passion for front-end development. I enjoy turning designs into clean,
+        responsive interfaces using HTML, CSS, and React. I’m focused on
+        improving my problem-solving, writing clean code, and learning modern
+        tools that help me build real-world projects.
+      </p>
+    </section>
+
+    <!-- List -->
+    <section class="section">
+      <h2>Things I’m Working On</h2>
+      <ul class="nice-list">
+        <li>Mastering responsive layouts and media queries</li>
+        <li>Practicing clean component structures in React</li>
+        <li>Building small projects to strengthen fundamentals</li>
+        <li>Improving English communication and documentation</li>
+      </ul>
+    </section>
+
+    <!-- Table -->
+    <section class="section">
+      <h2>Profile Table</h2>
+      <table class="profile">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Detail</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Abdullah Durrani</td>
+            <td rowspan="2">Basic identity info (rowspan demo)</td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>Pakistan</td>
+          </tr>
+          <tr>
+            <td>Focus</td>
+            <td colspan="2">Front-end (HTML, CSS, React) — (colspan demo)</td>
+          </tr>
+          <tr>
+            <td>Goals</td>
+            <td>Responsive websites, clean UI</td>
+            <td>Daily coding practice</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Form -->
+    <section class="section" style="background:#ecfeff;">
+      <h2>Contact Form</h2>
+      <form class="contact" action="#" method="post">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
+        </div>
+
+        <div>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic" required>
+            <option value="">Select a topic</option>
+            <option value="html">HTML & CSS</option>
+            <option value="react">React</option>
+            <option value="projects">Projects</option>
+          </select>
+        </div>
+
+        <div>
+          <span style="display:block; font-weight:600; margin-bottom:6px;">Contact Preference</span>
+          <label>
+            <input type="radio" name="pref" value="email" checked />
+            Email
+          </label>
+          <label style="margin-left: 12px;">
+            <input type="radio" name="pref" value="phone" />
+            Phone
+          </label>
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write a short message..."></textarea>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" name="updates" />
+            Send me updates
+          </label>
+        </div>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer class="section" style="text-align:center; background:#fef3c7;">
+      <small>© 2025 Abdullah Durrani — Assignment 3</small>
+    </footer>
+  </div>
+</body>
+</html>
+
+
+
+<!-- crazy-fog.surge.sh -->
