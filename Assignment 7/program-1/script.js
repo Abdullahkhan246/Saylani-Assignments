@@ -17,6 +17,7 @@ while (true) {
     continue;
   }
 let num = Number(userInput);
+console.log(num);
   if (num === 0) {
     alert("The light is OFF");
   } else if (num === 1) {
